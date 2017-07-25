@@ -33,7 +33,12 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Use bootstrap bc who doesn't
 gem 'bootstrap', '~> 4.0.0.alpha6'
+
+# Use font awesome for the logo and nice small pics
+gem "font-awesome-rails"
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
