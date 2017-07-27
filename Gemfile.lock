@@ -44,6 +44,7 @@ GEM
     autoprefixer-rails (7.1.2.3)
       execjs
     bcrypt (3.1.11)
+    bcrypt (3.1.11-x86-mingw32)
     bindex (0.5.0)
     bootstrap (4.0.0.alpha6)
       autoprefixer-rails (>= 6.0.3)
@@ -188,10 +189,16 @@ GEM
       tzinfo (>= 1.0.0)
     uglifier (3.2.0)
       execjs (>= 0.3.0, < 3)
+<<<<<<< HEAD
+    warden (1.2.7)
+      rack (>= 1.0)
+    wdm (0.1.1)
+=======
     wdm (0.1.1)
 =======
     warden (1.2.7)
       rack (>= 1.0)
+>>>>>>> 760bb130baf2ebcc29ca194ee78988bb27149abd
     web-console (3.5.1)
       actionview (>= 5.0)
       activemodel (>= 5.0)
