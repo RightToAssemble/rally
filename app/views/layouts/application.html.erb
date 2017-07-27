@@ -22,11 +22,13 @@
         <div class="container collapse navbar-collapse pull-right" id="navbarNav">
           <ul class="nav navbar-nav navbar-right ml-auto">
             <li class="nav-item active">
-              <%= link_to "Contact Info", new_contact_path %>
-              <%= link_to "About", about_path %>
-              <%= link_to "Sign In", new_user_session_path %>
-              <%= link_to "Hot City Rallies", hot_rally_city_path %>
-              <%= link_to "Sign Up", new_user_registration_path %>
+              <div class="navlinks">
+                <%= link_to "Contact Info", new_contact_path %>
+                <%= link_to "About", about_path %>
+                <%= link_to "Sign In", new_user_session_path %>
+                <%= link_to "Hot City Rallies", hot_rally_city_path %>
+                <%= link_to "Sign Up", new_user_registration_path %>
+              </div>
             </li>
           </ul>
         </div>
