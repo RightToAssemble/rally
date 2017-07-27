@@ -3,11 +3,36 @@
   <head>
     <title>Rally</title>
     <%= csrf_meta_tags %>
-
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:400,700,800" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+
   <body>
+    <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+      <div class="container navbar-right">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <%= link_to root_path, class: "navbar-brand bold" do %>
+          <i class="fa fa-group"></i> RightToAssemble
+        <% end %>
+
+        <div class="container collapse navbar-collapse pull-right" id="navbarNav">
+          <ul class="nav navbar-nav navbar-right ml-auto">
+            <li class="nav-item active">
+              <%= link_to "Contact Info", new_contact_path %>
+              <%= link_to "About", about_path %>
+              <%= link_to "Sign In", new_user_session_path %>
+              <%= link_to "Sign Up", new_user_registration_path %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
     <%= yield %>
+
   </body>
 </html>
