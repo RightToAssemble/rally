@@ -1,0 +1,69 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ */
+
+@import "bootstrap";
+@import 'font-awesome';
+
+ h2 {
+   font-family: 'Open Sans', sans-serif;
+ }
+
+ .bold {
+   font-weight: bold;
+ }
+
+ .navbar-brand {
+   font-family: 'Open Sans', sans-serif;
+   font-weight: 800;
+ }
+
+ p {
+   font-size: 14px;
+ }
+
+.p-container {
+  padding-top: 10px;
+  padding-bottom: 30px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.navbar, .home-callout {
+  //Gradient provided by @_ighosh at uiGradients.com
+  background: #808080;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #3fada8, #808080);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #3fada8, #808080); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.home-callout {
+  margin-top: -10px;
+  padding-top: 50px;
+  padding-bottom: 100px;
+}
+
+.navbar {
+  border: none;
+}
+
+.navbar-default .navbar-brand, .navbar-default .navbar-nav li a {
+  color: black;
+  &:hover{
+    color: #5e5e5e;
+    background-color: transparent;
+    text-decoration: none;
+  }
+}
