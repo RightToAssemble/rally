@@ -23,26 +23,14 @@
           <ul class="nav navbar-nav navbar-right ml-auto">
              <li class = "nav-item active">
               <%= link_to "Contact Info", new_contact_path %>
-            </li>
-            <li class="nav-item active">
-              <div class="navlinks">
-                <%= link_to "About Us", about_path %>
-              </div>
-            </li>
-            <% if user_signed_in? %>
-              <li class = "nav-item active">
+              <%= link_to "About Us", about_path %>
+              <% if user_signed_in? %>
                 <%= link_to "City Rallies", hot_city_rallies_path %>
-              </li>
-              <li class = "nav-item active">
                 <%= link_to "Sign Out", destroy_user_session_path %>
-            <%else %>
-              <li class = "nav-item active">
+              <% else %>
                 <%= link_to "Sign In", new_user_session_path %>
-              </li>
-              <li class = "nav-item active">
-                <%= link_to "Sign Up", new_user_registration_path %>
-              </li>
-            <% end %>
+              <% end %>
+            </li>
           </ul>
         </div>
       </div>
