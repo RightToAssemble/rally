@@ -5,7 +5,9 @@
 </div>
 
 <div class="col-md-4 offset-md-4">
-  <%= flash[:notice] %>
+  <% flash.each do |type, msg| %>
+    <%= content_tag :div, msg, class: "alert alert-#{type}" %>
+  <% end %>
   <div class="container card card-block bg-faded">
     <%= form_for @contact do |f| %>
       <div class="form-group">
