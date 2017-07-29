@@ -1,0 +1,9 @@
+<div class = "container-fluid city_form">
+	<div class = "text-center">
+		<%= form_tag("/hot_rally_cities", method: "get") do %>
+		  <%= label_tag(:city, "Enter City:") %>
+		  <%= text_field_tag(:city) %>
+		  <%= submit_tag("Search") %>
+		<% end %>
+	</div>
+</div>
