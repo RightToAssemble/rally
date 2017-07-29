@@ -2,8 +2,11 @@
 	<div class = "row">
 		<div class = "col-md-5 offset-md-3">
 			<div class = "text-center form-group">
-				<%= label_tag :cityInput, "Enter City" %>
-				<%= text_field_tag :city, nil, name: nil, class: "form-control" %>
+				<%= form_for @city do |f| %>
+				<%= f.label "Enter City: " %>
+				<%= f.text_field :city %>
+				<%= f.submit %>
+				<% end %>
 			</div>
 		</div>
 	</div>
