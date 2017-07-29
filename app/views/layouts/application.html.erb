@@ -10,7 +10,7 @@
 
   <body>
     <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-      <div class="container navbar-right">
+      <div class="container navbar-right pull-right">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -22,13 +22,21 @@
         <div class="container collapse navbar-collapse pull-right" id="navbarNav">
           <ul class="nav navbar-nav navbar-right ml-auto">
              <li class = "nav-item active">
-              <%= link_to "Contact Info", new_contact_path %>
-              <%= link_to "About Us", about_path %>
+               <%= link_to new_contact_path do %>
+                 Contact <i class="fa fa-phone-square"></i>
+               <% end %>
+               <%= link_to about_path do %>
+                About <i class="fa fa-user-circle-o"></i>
+              <% end %>
               <% if user_signed_in? %>
                 <%= link_to "City Rallies", hot_city_rallies_path %>
-                <%= link_to "Sign Out", destroy_user_session_path %>
+                <%= link_to destroy_user_session_path do %>
+                  Sign Out <i class="fa fa-sign-out"></i>
+                <% end %>
               <% else %>
-                <%= link_to "Sign In", new_user_session_path %>
+                <%= link_to new_user_session_path do %>
+                  Sign In <i class="fa fa-sign-in"></i>
+                <% end %>
               <% end %>
             </li>
           </ul>

@@ -9,13 +9,13 @@
   <div class="container card card-block bg-faded">
     <% if user_signed_in? %>
       <div class="text-center">
-        <h3 class="home-link">Top City Rallies</h3>
+        <h3 class="home-link">Top City Rallies</h3> <span class="fa fa-fire fa-2x"> </span>
         <p>Check out the top rallies in your area for today</p>
       </div>
       <%= link_to "Hot Rallies", hot_rally_city_path, class: "btn btn-info btn-lg btn-block" %>
     <% else %>
       <div class="text-center">
-        <h3 class="home-link">Sign up</h3>
+        <h3 class="home-link">Sign Up</h3> <span class="fa fa-user-plus fa-2x"> </span>
         <p>Sign up and get in touch with millions who believe in your cause</p>
       </div>
       <%= link_to "Try it out", new_user_registration_path, class: 'btn btn-info btn-lg btn-block' %>
