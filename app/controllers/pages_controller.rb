@@ -6,7 +6,7 @@ class PagesController < ApplicationController
 		
 	end
 	def city
-
+		@city = ""
 	end
 
 end
