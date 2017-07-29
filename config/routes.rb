@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :contacts, only: :create
   get 'contact-us', to: 'contacts#new', as: 'new_contact'
   get '/hot_rally_city', to: 'pages#city'
+  get '/hot_rally_country', to: 'pages#country'
 end

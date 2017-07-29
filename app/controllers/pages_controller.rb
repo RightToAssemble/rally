@@ -8,5 +8,9 @@ class PagesController < ApplicationController
 	def city
 		@city = ""
 	end
+	def country
+		@country = ""
+
+	end
 
 end
