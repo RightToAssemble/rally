@@ -30,12 +30,13 @@
               <% end %>
               <% if user_signed_in? %>
                 <%= link_to "City Rallies", hot_city_rallies_path %>
-                <%= link_to destroy_user_session_path do %>
+                <%= link_to destroy_user_session_path, method: :delete do %>
                   Sign Out <i class="fa fa-sign-out"></i>
                 <% end %>
               <% else %>
                 <%= link_to new_user_session_path do %>
                   Sign In <i class="fa fa-sign-in"></i>
+                <% end %>
               <% end %>
             </li>
           </ul>
