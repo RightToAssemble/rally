@@ -24,13 +24,19 @@
              <li class = "nav-item active">
               <%= link_to "Contact Info", new_contact_path %>
               <%= link_to "About Us", about_path %>
-              <% if user_signed_in? %>
-                <%= link_to "City Rallies", hot_city_rallies_path %>
-                <%= link_to "Sign Out", destroy_user_session_path %>
-              <% else %>
-                <%= link_to "Sign In", new_user_session_path %>
-              <% end %>
             </li>
+            <% if user_signed_in? %>
+              <li class = "nav-item active">
+                <%= link_to "City Rallies", hot_rally_city_path %>
+              </li>
+              <li class = "nav-item active">
+                <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+              </li>
+            <%else %>
+              <li class = "nav-item active">
+                <%= link_to "Sign In", new_user_session_path %>
+              </li>
+              <% end %>
           </ul>
         </div>
       </div>
