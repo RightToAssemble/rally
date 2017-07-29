@@ -36,8 +36,6 @@ gem 'jbuilder', '~> 2.5'
 # Use bootstrap bc who doesn't
 gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'jquery-rails'
-#geocoder to find user location
-gem 'geocoder'
 #use devise for log in
 gem 'devise'
 

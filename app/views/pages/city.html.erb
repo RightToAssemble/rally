@@ -1,9 +1,10 @@
 <div class = "container-fluid city_form">
-	<div class = "text-center">
-		<%= form_tag("/hot_rally_cities", method: "get") do %>
-		  <%= label_tag(:city, "Enter City:") %>
-		  <%= text_field_tag(:city) %>
-		  <%= submit_tag("Search") %>
-		<% end %>
+	<div class = "row">
+		<div class = "col-md-5 offset-md-3">
+			<div class = "text-center form-group">
+				<%= label_tag :cityInput, "Enter City" %>
+				<%= text_field_tag :city, nil, name: nil, class: "form-control" %>
+			</div>
+		</div>
 	</div>
 </div>
