@@ -1,14 +1,14 @@
+<% flash.each do |type, msg| %>
+  <%= content_tag :div, msg, class: "alert alert-#{type}" %>
+<% end %>
 <div class="container">
   <h2 class="text-center bold">Contact Us<h2>
 </div>
 
 <div class="row">
   <div class="col-md-4 offset-md-2">
-    <% flash.each do |type, msg| %>
-      <%= content_tag :div, msg, class: "alert alert-#{type}" %>
-    <% end %>
     <div class="container card card-block bg-faded">
-      <p class=" bold text-center">Having problems with the website? Suggestions/improvements? </p>
+      <h6 class=" bold text-center">Having problems with the website? Suggestions/improvements? </h6>
       <%= form_for @contact do |f| %>
         <div class="form-group">
           <%= f.label :name %>
@@ -60,7 +60,7 @@
           <a href="#" class="fa fa-twitter"> <span class="network-name">Twitter</span></a>
           <a href="#" class="fa fa-facebook"> <span class="network-name">Facebook</span></a>
           <a href="#" class="fa fa-instagram"> <span class="network-name">Instagram</span></a>
-          <a href="#" class="fa fa-google-plus"> <span class="network-name">Google+</span></a>
+          <a href="#" class="fa fa-google-plus"> <span class="network-name">Google Plus</span></a>
         </ul>
       </div>
     </div>
