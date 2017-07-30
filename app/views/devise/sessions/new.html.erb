@@ -1,12 +1,11 @@
-<div>
-  <div class="container text-center">
-    <h2 class="bold">Log In</h2>
-  </div>
-
-  <div class="col-md-4 offset-md-4">
+<div class="form-space"></div>
+<div class="row">
+  <div class="col-md-3 offset-md-2">
     <div class="container card card-block bg-faded">
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <%= devise_error_messages! %>
+
+        <h3 class="bold text-center form-header">Log in to Your Account</h3>
 
         <div class="form-group">
           <%= f.label :email %>
@@ -36,5 +35,28 @@
       Haven't signed up yet? <%= render "devise/shared/links" %>
     </div>
 
+  </div>
+
+  <div class="col-md-2">
+    <div class='left-col'></div>
+    <div class='right-col'></div>
+  </div>
+
+
+  <div class="col-md-3">
+    <div class="text-center social-login">
+      <h3 class="bold"> Log in using Social Media </h3>
+    	<div class="social-login-buttons">
+      	<a class="btn btn-link-1 btn-link-1-facebook" href="#">
+      		<i class="fa fa-facebook"></i> <u class="form-social-txt"> Continue with Facebook </u>
+      	</a> <br>
+      	<a class="btn btn-link-1 btn-link-1-twitter" href="#">
+      		<i class="fa fa-twitter"></i> <u class="form-social-txt"> Continue with Twitter </u>
+      	</a> <br>
+      	<a class="btn btn-link-1 btn-link-1-google" href="#">
+      		<i class="fa fa-google"></i> <u class="form-social-txt"> Continue with Google </u>
+      	</a>
+    	</div>
+    </div>
   </div>
 </div>

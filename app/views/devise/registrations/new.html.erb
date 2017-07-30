@@ -1,12 +1,11 @@
-<div>
-  <div class="container text-center">
-    <h2 class="bold">Sign Up</h2>
-  </div>
-
-  <div class="col-md-4 offset-md-4">
+<div class="form-space"></div>
+<div class="row">
+  <div class="col-md-3 offset-md-2">
     <div class="container card card-block bg-faded">
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= devise_error_messages! %>
+
+        <h3 class="bold text-center form-header">Sign up for an Account</h3>
 
         <div class = "form-group">
           <%= f.label "First Name" %>
@@ -34,6 +33,8 @@
           <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
         </div>
 
+        <p>By creating an account you agree to our <a href="#">Terms & Privacy</a> </p>
+
         <div class="actions form-group">
           <%= f.submit "Sign up", class: "btn btn-success btn-md btn-block" %>
         </div>
@@ -44,5 +45,28 @@
       Already a user? <%= render "devise/shared/links" %>
     </div>
 
+  </div>
+
+  <div class="col-md-2">
+    <div class='left-col'></div>
+    <div class='right-col'></div>
+  </div>
+
+
+  <div class="col-md-3">
+    <div class="text-center social-login">
+      <h3 class="bold"> Log in using Social Media </h3>
+    	<div class="social-login-buttons">
+      	<a class="btn btn-link-1 btn-link-1-facebook" href="#">
+      		<i class="fa fa-facebook"></i> <u class="form-social-txt"> Sign up using Facebook </u>
+      	</a> <br>
+      	<a class="btn btn-link-1 btn-link-1-twitter" href="#">
+      		<i class="fa fa-twitter"></i> <u class="form-social-txt"> Sign up using Twitter </u>
+      	</a> <br>
+      	<a class="btn btn-link-1 btn-link-1-google" href="#">
+      		<i class="fa fa-google"></i> <u class="form-social-txt"> Sign up using Google </u>
+      	</a>
+    	</div>
+    </div>
   </div>
 </div>
