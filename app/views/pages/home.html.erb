@@ -8,20 +8,37 @@
 
 </br></br>
 
-<div class="col-md-3 offset-md-2">
-  <div class="container card card-block bg-faded">
-    <% if user_signed_in? %>
+
+<% if user_signed_in? %>
+<div class = "row">
+  <div class="col-md-3 offset-md-2">
+    <div class="container card card-block bg-faded">
       <div class="text-center">
         <h3 class="home-link">Top City Rallies</h3> <span class="fa fa-fire fa-2x"> </span>
         <p>Check out the top rallies in your area for today</p>
       </div>
-      <%= link_to "Hot Rallies", hot_rally_city_path, class: "btn btn-info btn-lg btn-block" %>
-    <% else %>
+      <%= link_to "Hot City Rallies", hot_rally_city_path, class: "btn btn-primary btn-lg btn-block" %>
+    </div>
+  </div>
+  <div class="col-md-3 offset-md-2">
+    <div class="container card card-block bg-faded">
+      <div class = "text-center">
+      <h3 class="home-link">Top Country Rallies</h3> <span class="fa fa-fire fa-2x"> </span>
+        <p>Go bigger and look at the top rallies in the country for today</p>
+      </div>
+      <%= link_to "Hot Country Rallies", hot_rally_country_path, class: "btn btn-success btn-lg btn-block" %>
+    </div>
+  </div>
+</div>
+<% else %>
+  <div class="col-md-3 offset-md-2">
+    <div class="container card card-block bg-faded">
       <div class="text-center">
         <h3 class="home-link">Sign Up</h3> <span class="fa fa-user-plus fa-2x"> </span>
         <p>Sign up and get in touch with millions who believe in your cause</p>
       </div>
       <%= link_to "Try it out", new_user_registration_path, class: 'btn btn-info btn-lg btn-block' %>
-    <% end %>
+    </div>
   </div>
-</div>
+    <% end %>
+ 
