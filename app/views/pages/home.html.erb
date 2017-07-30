@@ -1,3 +1,6 @@
+<% flash.each do |type, msg| %>
+  <%= content_tag :div, msg, class: "alert alert-#{type}" %>
+<% end %>
 <div class="home-callout container-fluid text-center">
   <h1 class="bold">Welcome to Right to Assemble<h1>
   <h3> A community where you and others can fight for what you believe in </h3>
