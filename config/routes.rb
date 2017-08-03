@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   get 'contact-us', to: 'contacts#new', as: 'new_contact'
   get '/hot_rally_city', to: 'pages#city'
   get '/hot_rally_country', to: 'pages#country'
-  resources :create_rally
+  resources :new_rallies
 end

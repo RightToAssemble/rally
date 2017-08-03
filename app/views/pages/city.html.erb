@@ -5,7 +5,7 @@
 				<%= form_for @city do |f| %>
 				<div class = "form-group">
 					<h3><%= f.label "Enter City: " %></h3>
-					<%= f.text_field :city, autofocus: true, class: 'form-control' %>
+					<%= f.search_field (:place, :city) , autofocus: true, class: 'form-control' %>
 				</div>
 				<div class = "actions form-group">
 					<%= f.submit "Search", class: "btn btn-info btn-md btn-block" %>
