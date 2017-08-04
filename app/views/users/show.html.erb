@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 offset-md-4">
+      <h1 class="text-center bold profile-name"> <%= @user.profile.first_name %> <%= @user.profile.last_name %> </h1>
+      <div class="container card card-block bg-faded">
+        <div class="profile-info">
+          <h3 class="profile-tag"> City </h3>
+          <%= @user.profile.city %>
+        </div>
+
+        <div class="profile-info">
+          <h3 class="profile-tag"> Email </h3>
+          <%= @user.profile.email %>
+        </div>
+      </div>
+      <div class="container card card-block bg-faded">
+        <h4 class="profile-tag"> Description </h4>
+        <%= @user.profile.description %>
+      </div>
+    </div>
+
+    <div class="edit-profile container text-center devise-links">
+      Need to update your profile? <a><%= link_to "Edit Your Profile", edit_user_profile_path(user_id: current_user.id) %></a>
+    </div>
+  </div>
+</div>
