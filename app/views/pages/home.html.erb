@@ -16,10 +16,10 @@
   <div class="col-md-3 offset-md-2">
     <div class="container card card-block bg-faded">
       <div class="text-center">
-        <h3 class="home-link">Create a Rally</h3> <span class="fa fa-fire fa-2x"> </span>
+        <h3 class="home-link">Create a Rally</h3> <span class="fa fa-plus fa-2x"> </span>
         <p>Check out the top rallies in your area for today</p>
       </div>
-      <%= link_to "Create a Rally", new_create_rally_path, class: "btn btn-success btn-lg btn-block" %>
+      <%= link_to "Add a Rally to the Community", new_rallies_path, class: "btn btn-success btn-lg btn-block" %>
     </div>
   </div>
   <div class="col-md-3 offset-md-2">
@@ -30,7 +30,7 @@
       </div>
       <%= link_to "Hot City Rallies", hot_rally_city_path, class: "btn btn-info btn-lg btn-block" %>
       <%= link_to "Hot Country Rallies", hot_rally_country_path, class: "btn btn-primary btn-lg btn-block" %>
-      
+
     </div>
   </div>
 </div>
@@ -50,4 +50,3 @@
     </div>
   </div>
     <% end %>
- 
