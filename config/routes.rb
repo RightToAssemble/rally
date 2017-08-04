@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  devise_for :users
+  devise_for :users, :controllers => { registrations: 'registrations'}
   root to: 'pages#home'
   get 'about', to: 'pages#about'
-  resources :contacts
+  resources :contacts, only: :create
+  get 'contact-us', to: 'contacts#new', as: 'new_contact'
   get '/hot_rally_city', to: 'pages#city'
+  get '/hot_rally_country', to: 'pages#country'
+  resources :new_rallies
 end

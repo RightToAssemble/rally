@@ -6,6 +6,10 @@ class PagesController < ApplicationController
 		
 	end
 	def city
+		@city = ""
+	end
+	def country
+		@country = ""
 
 	end
 

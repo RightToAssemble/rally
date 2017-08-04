@@ -28,7 +28,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+# gem 'bcrypt', '~> 3.1.11'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -36,8 +36,6 @@ gem 'jbuilder', '~> 2.5'
 # Use bootstrap bc who doesn't
 gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'jquery-rails'
-#geocoder to find user location
-gem 'geocoder'
 #use devise for log in
 gem 'devise'
 
@@ -66,3 +64,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'wdm', '>= 0.1.0' if Gem.win_platform?
+
+gem 'bcrypt', '~> 3.1.7'

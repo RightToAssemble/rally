@@ -1,4 +1,53 @@
+<% flash.each do |type, msg| %>
+  <%= content_tag :div, msg, class: "alert alert-#{type}" %>
+<% end %>
+
+
+
+<% if user_signed_in? %>
+
 <div class="home-callout container-fluid text-center">
-  <h1 class="bold">Welcome to Right to Assemble<h1>
-  <h3> A community where you and others can fight for what you believe in </h3>
+  <h1 class="bold">Welcome <%= current_user.name.humanize %> <%= current_user.last_name.humanize %><h1>
+  <h3>We are glad to see you trying to take a stand. Check out trending rallies on the bottom left and make a rally on the bottom right</h3>
 </div>
+
+</br></br>
+<div class = "row">
+  <div class="col-md-3 offset-md-2">
+    <div class="container card card-block bg-faded">
+      <div class="text-center">
+        <h3 class="home-link">Create a Rally</h3> <span class="fa fa-fire fa-2x"> </span>
+        <p>Check out the top rallies in your area for today</p>
+      </div>
+      <%= link_to "Create a Rally", new_new_rally_path, class: "btn btn-success btn-lg btn-block" %>
+    </div>
+  </div>
+  <div class="col-md-3 offset-md-2">
+    <div class="container card card-block bg-faded">
+      <div class = "text-center">
+      <h3 class="home-link">Top Rallies</h3> <span class="fa fa-fire fa-2x"> </span>
+        <p>Look at some of the trending rallies in your city and country</p>
+      </div>
+      <%= link_to "Hot City Rallies", hot_rally_city_path, class: "btn btn-info btn-lg btn-block" %>
+      <%= link_to "Hot Country Rallies", hot_rally_country_path, class: "btn btn-primary btn-lg btn-block" %>
+      
+    </div>
+  </div>
+</div>
+<% else %>
+  <div class="home-callout container-fluid text-center">
+    <h1 class="bold">Welcome to Right to Assemble<h1>
+    <h3> A community where you and others can fight for what you believe in </h3>
+  </div>
+  </br></br>
+  <div class="col-md-3 offset-md-4">
+    <div class="container card card-block bg-faded">
+      <div class="text-center">
+        <h3 class="home-link">Sign Up</h3> <span class="fa fa-user-plus fa-2x"> </span>
+        <p>Sign up and get in touch with millions who believe in your cause</p>
+      </div>
+      <%= link_to "Try it out", new_user_registration_path, class: 'btn btn-info btn-lg btn-block' %>
+    </div>
+  </div>
+    <% end %>
+ 

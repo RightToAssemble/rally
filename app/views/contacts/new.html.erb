@@ -1,31 +1,69 @@
-<div class="container text-center">
-  <h2 class="bold">Contact Us<h2>
-  <p>Having problems with the website? Suggestions or improvements?
-  Just want to contact us?</p>
+<% flash.each do |type, msg| %>
+  <%= content_tag :div, msg, class: "alert alert-#{type}" %>
+<% end %>
+<div class="container">
+  <h2 class="text-center bold">Contact Us<h2>
 </div>
 
-<div class="col-md-4 offset-md-4">
-  <%= flash[:notice] %>
-  <div class="container card card-block bg-faded">
-    <%= form_for @contact do |f| %>
-      <div class="form-group">
-        <%= f.label :name %>
-        <%= f.text_field :name, class: 'form-control' %>
-      </div>
-      <div class="form-group">
-        <%= f.label :email %>
-        <%= f.text_field :email, class: 'form-control' %>
-        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-      </div>
-      <div class="form-group">
-        <%= f.label :subject %>
-        <%= f.text_field :subject, class: 'form-control' %>
-      </div>
-      <div class="form-group">
-        <%= f.label :message %>
-        <%= f.text_area :message, class: 'form-control', rows: '3' %>
-      </div>
-      <%= f.submit 'Submit', class: 'btn btn-primary' %>
-    <% end %>
+<div class="row">
+  <div class="col-md-4 offset-md-2">
+    <div class="container card card-block bg-faded">
+      <h6 class=" bold text-center">Having problems with the website? Suggestions/improvements? </h6>
+      <%= form_for @contact do |f| %>
+        <div class="form-group">
+          <%= f.label :name %>
+          <%= f.text_field :name, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :email %>
+          <%= f.text_field :email, class: 'form-control' %>
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+          <%= f.label :subject %>
+          <%= f.text_field :subject, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :message %>
+          <%= f.text_area :message, class: 'form-control', rows: '3' %>
+        </div>
+        <%= f.submit 'Submit', class: 'btn btn-primary' %>
+      <% end %>
+    </div>
   </div>
+
+  <div class="col-md-3 offset-md-1">
+    <div class="container card card-block bg-faded">
+      <div class="row">
+        <div class="container col-md-1">
+          <i class="fa fa-map-marker fa-2x"></i>
+          </br>
+          </br>
+          <i class="fa fa-phone fa-2x"></i>
+          <br>
+          <br>
+          <i class="fa fa-envelope-o fa-2x"></i>
+        </div>
+        <div class="container col-md-11">
+          <div class=text-center> <h6 class="bold"> RightToAssemble Headquarters</h6> <p> 1234 Blue Road, Louisville, KY </p>  </div>
+          <h6 class="bold text-center"> (502) 123-4567 </h6>
+          </br>
+          <h6 class="bold text-center"> support@righttoassemble.com </h6>
+        </div>
+      </div>
+
+      <div class="customHr">.</div>
+
+      <h4 class="text-center bold socialTag">Social Media</h4>
+      <div class="container text-center">
+        <ul class="list-inline banner-social-buttons">
+          <a href="#" class="fa fa-twitter"> <span class="network-name">Twitter</span></a>
+          <a href="#" class="fa fa-facebook"> <span class="network-name">Facebook</span></a>
+          <a href="#" class="fa fa-instagram"> <span class="network-name">Instagram</span></a>
+          <a href="#" class="fa fa-google-plus"> <span class="network-name">Google Plus</span></a>
+        </ul>
+      </div>
+    </div>
+  </div>
+
 </div>
