@@ -13,16 +13,26 @@
 
 </br></br>
 <div class = "row">
-  <div class="col-md-3 offset-md-2">
+  <div class="col-md-3 offset-md-1">
     <div class="container card card-block bg-faded">
       <div class="text-center">
         <h3 class="home-link">Create a Rally</h3> <span class="fa fa-plus fa-2x"> </span>
         <p>Check out the top rallies in your area for today</p>
+        <%= link_to "Add a Rally to the Community", new_rallies_path, class: "btn btn-success btn-lg btn-block" %>
       </div>
-      <%= link_to "Add a Rally to the Community", new_rallies_path, class: "btn btn-success btn-lg btn-block" %>
     </div>
   </div>
-  <div class="col-md-3 offset-md-2">
+  <div class="col-md-3">
+    <div class="container card card-block bg-faded">
+      <div class="text-center">
+        <h3 class="home-link">Create a Profile</h3> <span class="fa fa-plus fa-2x"> </span>
+        <p>Create your profile so people can know who their leader is.</p>
+        <%= link_to "Create your profile", new_user_profile_path(user_id: current_user.id), class: "btn btn-success btn-lg btn-block" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-3">
     <div class="container card card-block bg-faded">
       <div class = "text-center">
       <h3 class="home-link">Top Rallies</h3> <span class="fa fa-fire fa-2x"> </span>
