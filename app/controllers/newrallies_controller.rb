@@ -3,7 +3,15 @@ class NewralliesController < ApplicationController
 		@newrally = Newrally.new
 		
 	end
+	def city
+		@newrally = Newrally.all
+
+	end
+	def country
+		@newrally = Newrally.all
+	end
 	 def create
+	 	@city = '#{:citysearch[:city]}'
 	    @newrally = Newrally.new(newrally_params)
 
 	    if @newrally.save
@@ -18,6 +26,9 @@ class NewralliesController < ApplicationController
 	      flash[:danger] = @newrally.errors.full_messages.join(", ")
 	      redirect_to new_newrally_path
 	    end
+	end
+	def show
+
 	end
 
 	private

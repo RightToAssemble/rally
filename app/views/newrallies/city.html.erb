@@ -1,0 +1,15 @@
+<div class = "container-fluid city_form">
+	<div class = "row">
+		<div class = "col-md-3 offset-md-4">
+			<div class = "text-center form-group">
+			<%= form_for :citysearch, url: "newrallies" do |city| %>
+				<div class = "form-group">
+					<%= city.text_field :city, class: 'form-control' %>
+				</div>
+					<%= city.submit :search %>
+			<%  end %>
+		</div>
+		</div>
+	</div>
+</div>
+<%= render "newrallies/index" %>
