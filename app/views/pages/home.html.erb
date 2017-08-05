@@ -8,7 +8,10 @@
 
 <div class="home-callout container-fluid text-center">
   <h1 class="bold">Welcome <%= current_user.name.humanize %> <%= current_user.last_name.humanize %><h1>
-  <h3>We are glad to see you trying to take a stand. Check out trending rallies on the bottom left and make a rally on the bottom right</h3>
+  <div class="home-message">
+    <h3>We are glad to see you trying to take a stand. Check out trending rallies on the bottom left. <h3>
+    <h3>Make a rally or create your profile on the bottom right.</h3>
+  </div>
 </div>
 
 </br></br>
@@ -19,18 +22,29 @@
         <h3 class="home-link">Create a Rally</h3> <span class="fa fa-fire fa-2x"> </span>
         <p>Check out the top rallies in your area for today</p>
       </div>
-      <%= link_to "Create a Rally", new_newrally_path, class: "btn btn-success btn-lg btn-block" %>
+      <%= link_to "Create a Rally", new_new_rally_path, class: "btn btn-success btn-lg btn-block" %>
+
+      <% if !current_user.profile %>
+        <div class="customHr">.</div>
+
+        <div class="text-center">
+          <h3 class="home-link">Create a Profile</h3> <span class="fa fa-plus fa-2x"> </span>
+          <p>Create one</p>
+        </div>
+        <%= link_to "Create your profile!", new_user_profile_path(user_id: current_user.id), class: "btn btn-success btn-lg btn-block"%>
+      <% end %>
+
     </div>
   </div>
   <div class="col-md-3 offset-md-2">
     <div class="container card card-block bg-faded">
-      <div class = "text-center">
+      <div class="text-center">
       <h3 class="home-link">Top Rallies</h3> <span class="fa fa-fire fa-2x"> </span>
         <p>Look at some of the trending rallies in your city and country</p>
       </div>
       <%= link_to "Hot City Rallies", city_path, class: "btn btn-info btn-lg btn-block" %>
       <%= link_to "Hot Country Rallies", hot_rally_country_path, class: "btn btn-primary btn-lg btn-block" %>
-      
+
     </div>
   </div>
 </div>
@@ -50,4 +64,3 @@
     </div>
   </div>
     <% end %>
- 
