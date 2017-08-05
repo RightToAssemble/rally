@@ -47,8 +47,6 @@ ActiveRecord::Schema.define(version: 20170804185439) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.float "latitude"
-    t.float "longitude"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
