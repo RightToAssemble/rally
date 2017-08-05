@@ -2,16 +2,14 @@
 	<div class = "row">
 		<div class = "col-md-3 offset-md-4">
 			<div class = "text-center form-group">
-				<%= form_for @country do |f| %>
+			<%= form_for :countrysearch, url: "newrallies" do |country| %>
 				<div class = "form-group">
-					<h3><%= f.label "Enter Country: " %></h3>
-					<%= f.search_field (:newrallies, :country), autofocus: true, class: 'form-control' %>
+					<%= country.text_field :city, class: 'form-control' %>
 				</div>
-				<div class = "actions form-group">
-					<%= f.submit "Search", class: "btn btn-primary btn-md btn-block" %>
-				</div>
-				<% end %>
-			</div>
+					<%= country.submit :search %>
+			<%  end %>
+		</div>
 		</div>
 	</div>
 </div>
+<%= render "newrallies/index" %>

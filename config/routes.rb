@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   get '/hot_rally_country', to: 'searches#country'
   resources :newrallies
   get 'city', to: 'newrallies#city'
+  get 'country', to: 'newrallies#country'
 end
