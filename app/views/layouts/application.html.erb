@@ -29,7 +29,12 @@
                 About <i class="fa fa-user-circle-o"></i>
               <% end %>
               <% if user_signed_in? %>
-                <%= link_to destroy_user_session_path, method: :delete do%> 
+                <% if current_user.profile %>
+                  <%= link_to user_path(id: current_user.id) do %>
+                    My Profile <i class="fa fa-user"></i>
+                  <% end %>
+                <% end %>
+                <%= link_to destroy_user_session_path, method: :delete do %>
                   Sign Out <i class="fa fa-sign-out"></i>
                 <% end %>
               <% else %>

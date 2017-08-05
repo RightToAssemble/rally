@@ -1,0 +1,26 @@
+<%= form_for @profile, url: user_profile_path do |f| %>
+  <div class="form-group">
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :city %>
+    <%= f.text_field :city, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :email %>
+    <%= f.text_field :email, class: 'form-control' %>
+    <small id="emailHelp" class="form-text text-muted">This will only be shared with people within a rally.</small>
+  </div>
+  <div class="form-group">
+    <%= f.label :description %>
+    <%= f.text_area :description, class: 'form-control', rows: '3' %>
+  </div>
+  <div class="form-group">
+    <%= f.submit "Update Profile", class: 'btn btn-primary' %>
+  </div>
+<% end %>
