@@ -1,25 +1,34 @@
 class NewralliesController < ApplicationController
+
+	def newcitysearch
+		@citysearch = Citysearch.new
+		@newrally = Newrally.all
+	end
+
+	def citysearchcreate
+		@citysearch = Citysearch.new(citysearch_params)
+
+		if @citysearch.save
+		cityfind = params[:citysearch][:cityfind]
+		redirect_to citysearches_new_path
+		else
+		
+		end
+
+	end
+
+	private 
+		def citysearch_params
+			params.require(:citysearch).permit(:cityfind)
+		end
+
+	def country
+		@newrally = Newrally.all
+	end
 	def new
 		@newrally = Newrally.new
 		
 	end
-	def city
-		@newrally = Newrally.all
-		@citysearch = Citysearch.new
-	end
-	def citysearch
-		@newrally = Newrally.all
-		@citysearch = Citysearch.new(citysearch_params)
-		if @citysearch.save
-		cityfind = params[:citysearch][:cityfind]
-		redirect_to citysearches_path
-		end
-
-	end
-	def country
-		@newrally = Newrally.all
-	end
-
 	 def create
 	    @newrally = Newrally.new(newrally_params)
 
@@ -45,9 +54,6 @@ class NewralliesController < ApplicationController
 		def newrally_params
 			params.require(:newrally).permit(:title, :description, :organization, :city, :country)
 		end
-	private 
-		def citysearch_params
-			params.require(:citysearch).permit(:cityfind)
-		end
+	
 
 end
