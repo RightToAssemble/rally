@@ -42,8 +42,8 @@ gem 'devise'
 # Use font awesome for the logo and nice small pics
 gem "font-awesome-rails"
 
-# Use paperclip for picture attachments
-gem "paperclip", "~> 5.0.0"
+# Use carrierwave for picture attachments
+gem 'carrierwave', '~> 1.0'
 
 
 group :development, :test do
