@@ -1,5 +1,6 @@
 class ProfilesController < ApplicationController
   before_action :authenticate_user!
+  before_action :only_current_user
 
   def new
     # Render blank profile details form
@@ -27,7 +28,7 @@ class ProfilesController < ApplicationController
     @profile = @user.profile
     if @profile.update_attributes(profile_params)
       flash[:success] = "Profile updated"
-      redirect_to user_path(id: params[:user_id] )
+      redirect_to user_path ( id: params[:user_id] )
     else
       render action: :edit
     end
@@ -35,7 +36,7 @@ class ProfilesController < ApplicationController
 
   private
     def profile_params
-      params.require(:profile).permit(:first_name, :last_name, :city, :email, :description)
+      params.require(:profile).permit(:first_name, :last_name, :user_name, :city, :email, :description)
     end
 
 end
