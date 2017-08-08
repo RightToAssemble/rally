@@ -19,7 +19,9 @@ $(document).on('turbolinks:load', function(){
 
 		}
 
+		
 		city.append( $('<input type= "hidden" name="citysearch">').val(idCity) );
+		prompt("It worked");
 		city.get(0).submit();
 	})
 

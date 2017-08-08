@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 20170805170913) do
 
   create_table "citysearches", force: :cascade do |t|
-    t.string "citysearch"
+    t.string "cityfind"
   end
 
   create_table "contacts", force: :cascade do |t|
