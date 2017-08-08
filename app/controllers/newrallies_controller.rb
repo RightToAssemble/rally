@@ -1,7 +1,19 @@
 class NewralliesController < ApplicationController
-	def index
-		if params[:search]
-			@newrally = Newrally.search(params[:search])
+	def city
+		
+		if params[:citysearch]
+			Newrally.csearch = true
+			@newrally = Newrally.search(params[:citysearch])
+		else
+			@newrally = Newrally.all
+		end
+
+	end
+	def country 
+		
+		if params[:countrysearch]
+			Newrally.csearch = false
+			@newrally = Newrally.search(params[:countrysearch])
 		else
 			@newrally = Newrally.all
 		end
@@ -28,9 +40,6 @@ class NewralliesController < ApplicationController
 	      redirect_to new_newrally_path
 	      
 	    end
-	end
-	def show
-
 	end
 
 	private

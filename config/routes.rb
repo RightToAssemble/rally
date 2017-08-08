@@ -7,10 +7,8 @@ Rails.application.routes.draw do
   get 'about', to: 'pages#about'
   resources :contacts, only: :create
   get 'contact-us', to: 'contacts#new', as: 'new_contact'
-  resources :newrallies
+  resources :newrallies, except: :index
+  get 'newrallies-city', to: 'newrallies#city', as: 'city'
+  get 'newrallies-country', to: 'newrallies#country', as: 'country'
 
-  get 'citysearches/new', to: 'newrallies#newcitysearch'
-  get 'citysearches', to: 'newrallies#citysearchindex'
-  post 'citysearches', to: 'newrallies#citysearchcreate'
-  get 'country', to: 'newrallies#country'
 end

@@ -1,0 +1,11 @@
+<div class = "container">
+    <% @newrally.each do |newrally| %>
+      <div class = citypost>
+        <h3 class = "text-center"><%= newrally.title %> 
+        <%= newrally.created_at.strftime('%b %d, %Y') %>
+        <%= newrally.city %></h3>
+        <%= newrally.country %>
+        <%= raw(newrally.description).truncate(358) %>
+      </div>
+    <% end %>
+</div>

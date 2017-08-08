@@ -1,15 +1,15 @@
 <div class = "container-fluid city_form">
-	<div class = "row">
-		<div class = "col-md-3 offset-md-4">
-			<div class = "text-center form-group">
-			<%= form_for :countrysearch, url: "newrallies" do |country| %>
-				<div class = "form-group">
-					<%= country.text_field :city, class: 'form-control' %>
-				</div>
-					<%= country.submit :search %>
-			<%  end %>
-		</div>
-		</div>
-	</div>
+  <div class = "row">
+    <div class = "col-md-3 offset-md-4">
+      <div class = "text-center form-group">
+      <%= form_tag(country_path, :method => 'get', id: "country-search-form") do %>
+        <div class = "form-group">
+          <%= text_field_tag :countrysearch, params[:countrysearch], placeholder: "Search Posts", class: 'form-control' %>
+        </div>
+          <%= submit_tag 'Submit', :name => nil %>
+      <%  end %>
+    </div>
+    </div>
+  </div>
 </div>
-<%= render "newrallies/index" %>
+<%= render 'newrallies/post' %>
