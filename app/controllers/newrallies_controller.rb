@@ -9,11 +9,11 @@ class NewralliesController < ApplicationController
 		end
 
 	end
-	def country 
+	def state
 		
-		if params[:countrysearch]
+		if params[:statesearch]
 			Newrally.csearch = false
-			@newrally = Newrally.search(params[:countrysearch])
+			@newrally = Newrally.search(params[:statesearch])
 		else
 			@newrally = Newrally.all
 		end
@@ -28,10 +28,11 @@ class NewralliesController < ApplicationController
 
 	   	 if @newrally.save 
 	      title = params[:newrally][:title]
+	      invite = params[:newrally][:invite]
 	      description = params[:newrally][:description]
 	      organization = params[:newrally][:organization]
 	      city = params[:newrally][:city]
-	      country = params[:newrally][:country]
+	      state = params[:newrally][:state]
 	      flash[:success] = "Posted"
 	      redirect_to new_newrally_path
 
@@ -44,7 +45,7 @@ class NewralliesController < ApplicationController
 
 	private
 		def newrally_params
-			params.require(:newrally).permit(:title, :description, :organization, :city, :country)
+			params.require(:newrally).permit(:title, :invite, :description, :organization, :city, :state)
 		end
 	
 

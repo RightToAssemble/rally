@@ -5,8 +5,8 @@ class Newrally < ActiveRecord::Base
 			where("city LIKE ?", "%#{citysearch}%")
 		end
 	else
-		def self.search(countrysearch)
-			where("country LIKE ?", "%#{countrysearch}%")
+		def self.search(statesearch)
+			where("state LIKE ?", "%#{countrysearch}%")
 		end
 	end
 
