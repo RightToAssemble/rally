@@ -8,20 +8,26 @@
 					<%= f.text_field :title, autofocus: true, class: 'form-control' %>
 				</div>
 				<div class = "form-group">
+					<%= f.label :invite %>
+					<%= f.text_area :invite, placeholder: "....Add emails of atleast 10 people seperated by a comma to verify your rally....",autofocus: true, class: 'form-control' %>
+				</div>
+				<div class = "form-group">
 					<%= f.label :description %>
-					<%= f.text_area :description, autofocus: true, class: 'form-control' %>
+					<%= f.text_area :description, placeholder: "...Include what to wear, where to meet and other important information...", autofocus: true, class: 'form-control' %>
 				</div>
 				<div class = "form-group">
 					<%= f.label :organization %>
 					<%= f.text_field :organization, autofocus: true, class: 'form-control' %>
 				</div>
 				<div class = "form-group">
+					<div class = "state-city">
 					<%= f.label :city %>
 					<%= f.text_field :city, autofocus: true, class: 'form-control' %>
-				</div>
-				<div class = "form-group">
-					<%= f.label :country %>
-					<%= f.select( :country, options_for_select([['USA', 1], ['Canada', 2]])) %>
+					</div>
+					<div class = "state-city">
+					<%= f.label :state %>
+					<%= f.text_field :state, autofocus: true, class: 'form-control' %>
+					</div>
 				</div>
 
 				<div class = "text-center">

@@ -2,9 +2,9 @@
   <div class = "row">
     <div class = "col-md-3 offset-md-4">
       <div class = "text-center form-group">
-      <%= form_tag(city_path, :method => 'get', id: "city-search-form") do %>
+      <%= form_tag(country_path, :method => 'get', id: "country-search-form") do %>
         <div class = "form-group">
-          <%= text_field_tag :citysearch, params[:citysearch], placeholder: "Search Posts", class: 'form-control' %>
+          <%= text_field_tag :countrysearch, params[:countrysearch], placeholder: "Search Posts", class: 'form-control' %>
         </div>
           <%= submit_tag 'Submit', :name => nil %>
       <%  end %>

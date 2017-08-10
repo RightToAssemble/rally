@@ -1,7 +1,19 @@
 class NewralliesController < ApplicationController
-	def index
-		if params[:search]
-			@newrally = Newrally.search(params[:search])
+	def city
+		
+		if params[:citysearch]
+			Newrally.csearch = true
+			@newrally = Newrally.search(params[:citysearch])
+		else
+			@newrally = Newrally.all
+		end
+
+	end
+	def state
+		
+		if params[:statesearch]
+			Newrally.csearch = false
+			@newrally = Newrally.search(params[:statesearch])
 		else
 			@newrally = Newrally.all
 		end
@@ -16,10 +28,11 @@ class NewralliesController < ApplicationController
 
 	   	 if @newrally.save 
 	      title = params[:newrally][:title]
+	      invite = params[:newrally][:invite]
 	      description = params[:newrally][:description]
 	      organization = params[:newrally][:organization]
 	      city = params[:newrally][:city]
-	      country = params[:newrally][:country]
+	      state = params[:newrally][:state]
 	      flash[:success] = "Posted"
 	      redirect_to new_newrally_path
 
@@ -29,13 +42,10 @@ class NewralliesController < ApplicationController
 	      
 	    end
 	end
-	def show
-
-	end
 
 	private
 		def newrally_params
-			params.require(:newrally).permit(:title, :description, :organization, :city, :country)
+			params.require(:newrally).permit(:title, :invite, :description, :organization, :city, :state)
 		end
 	
 
